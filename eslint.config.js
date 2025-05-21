@@ -8,6 +8,20 @@ import prettier from 'eslint-plugin-prettier'
 
 /** @type {import("eslint").Linter.FlatConfig[]} */
 export default [
+  {
+    ignores: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/coverage/**',
+      '**/.husky/**',
+      '**/public/**',
+      '**/vite.config.*',
+      '**/tsconfig.*',
+      '**/*.config.*',
+      '**/.eslintrc.*',
+    ],
+  },
+
   js.configs.recommended,
 
   {
@@ -29,8 +43,8 @@ export default [
     rules: {
       'vue/multi-word-component-names': 'off',
       'vue/no-multiple-template-root': 'off',
-      'prettier/prettier': 'warn',
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'prettier/prettier': 'warn',
     },
   },
 
